@@ -45,11 +45,6 @@ RUN    docker-php-ext-configure intl && \
 # imagick
     pecl install imagick && \
     docker-php-ext-enable imagick && \
-# apcu
-#    docker-php-source extract && \
-#    pecl install apcu && \
-#    docker-php-ext-enable apcu && \
-#    docker-php-source delete && \
     rm -r /tmp/pear/*
 
 # imagemagick, pdftk, ghostscript, unzip, update CA certificates
