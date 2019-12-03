@@ -73,3 +73,6 @@ RUN curl -Lo /usr/local/bin/mhsendmail https://github.com/mailhog/mhsendmail/rel
 
 # xdebug
 RUN pecl install xdebug-2.4.1
+
+# ZendOpcache
+RUN pecl install zendopcache-7.0.5
