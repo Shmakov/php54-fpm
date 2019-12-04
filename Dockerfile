@@ -72,6 +72,7 @@ RUN sed -i '/jessie-updates/d' /etc/apt/sources.list \
     intl \
     gettext \
     pcntl \
+    sockets \
   && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
   && php composer-setup.php --install-dir=/usr/local/bin --filename=composer --version=1.8.4 \
   && php -r "unlink('composer-setup.php');" \
