@@ -78,6 +78,8 @@ RUN sed -i '/jessie-updates/d' /etc/apt/sources.list \
   && php -r "unlink('composer-setup.php');" \
   && chsh -s /bin/bash www-data && mkdir -p /var/www/.composer && chown -R www-data:www-data /var/www \
   && su -c "composer global require hirak/prestissimo" -s /bin/sh www-data \
+  && sed -i 's/^mozilla\/DST_Root_CA_X3\.crt/!mozilla\/DST_Root_CA_X3\.crt/' /etc/ca-certificates.conf
+  && update-ca-certificates
   && apt-get -y clean \
   && apt-get -y autoclean \
   && apt-get -y autoremove \
